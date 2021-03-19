@@ -1,13 +1,18 @@
 package com.example.myrecyclejson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG = "TAG";
+    RecyclerView recyclerView;
 
     ArrayList<User> users = new ArrayList<>(Arrays.asList(
             new User("Pep","pepe@dot.com", "spain",R.drawable.icon201)
@@ -33,5 +38,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Collections.shuffle(users);
+
+        //Hooks
+        recyclerView = findViewById(R.id.recycleLayout);
+
+        //Layout
+        recyclerView.setLayoutManager(new
+                LinearLayoutManager(getApplicationContext()));
+
+
+        //Adapters
+        MyAdapter myAdapter = new MyAdapter(this,users);
+
+        //adaptamos el recylceView
+        recyclerView.setAdapter(myAdapter);
+
+
+
     }
 }
