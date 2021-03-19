@@ -1,10 +1,12 @@
 package com.example.myrecyclejson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.recyclevsCardview.R;
 
@@ -49,10 +51,13 @@ public class MainActivity extends AppCompatActivity {
         //Layout
         recyclerView.setLayoutManager(new
                 LinearLayoutManager(getApplicationContext()));
+//        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+//        Log.d(TAG, "onCreate: "+recyclerView.getLayoutManager());
+
 
 
         //Adapters
-        MyAdapter myAdapter = new MyAdapter(this,users);
+        MyAdapter myAdapter = new MyAdapter(this,users,recyclerView);
 
         //adaptamos el recylceView
         recyclerView.setAdapter(myAdapter);

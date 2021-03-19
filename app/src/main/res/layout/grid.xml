@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardViewRow"
-    android:layout_width="match_parent"
+    android:id="@+id/cardViewGrid"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     app:cardCornerRadius="20dp"
@@ -12,7 +12,7 @@
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_margin="10dp">
@@ -21,50 +21,40 @@
             android:id="@+id/textViewNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="name"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewProrfile"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/imageViewProrfile"
+            app:layout_constraintStart_toStartOf="@+id/imageViewProrfile"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProrfile" />
 
         <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="email"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textViewCountry"
-            app:layout_constraintEnd_toEndOf="@+id/textViewNom"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/textViewNom"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNom" />
+            app:layout_constraintEnd_toEndOf="@+id/imageViewProrfile"
+            app:layout_constraintStart_toStartOf="@+id/imageViewProrfile"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="1dp"
             android:text="country"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textViewEmail"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/textViewEmail"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+            app:layout_constraintEnd_toEndOf="@+id/textViewNom"
+            app:layout_constraintStart_toStartOf="@+id/textViewNom"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNom" />
 
         <ImageView
             android:id="@+id/imageViewProrfile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textViewNom"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEmail"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
