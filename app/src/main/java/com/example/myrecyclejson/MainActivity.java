@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.recyclevsCardview.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     ArrayList<User> users = new ArrayList<>(Arrays.asList(
-            new User("Pep","pepe@dot.com", "spain",R.drawable.icon201)
+            new User("Pep","pepe@dot.com", "spain", R.drawable.icon201)
             ,new User("Will","will@dot.com", "spain",R.drawable.icon202)
             ,new User("Camila","camila@dot.com", "spain",R.drawable.icon203)
             ,new User("Roser","roser@dot.com", "spain",R.drawable.icon204)
